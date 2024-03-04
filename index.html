@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Agency</title>
+    <!-- Bootstrap CSS (подключите Bootstrap, если используете) -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Travel Agency</a>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/travelagency">Tours</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/clients">Clients</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/bookings">Bookings</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Основное содержимое страницы -->
+    <div class="container my-4">
+      <h2>Featured Destinations</h2>
+      <div class="list-group">
+        <div class="list-group-item" data-tour-id="65de560f84ddeb3cf76ebb39">
+          <strong>Sri Lanka</strong> - Explore the beautiful landscapes and rich
+          culture of Sri Lanka. Duration: 3 days. Price: $500.
+          <button
+            id="sriLankaButton"
+            class="btn btn-info btn-sm float-right"
+            data-toggle="modal"
+            data-target="#bookingModal"
+          >
+            Book
+          </button>
+        </div>
+        <div class="list-group-item">
+          <strong>China</strong> - Immerse yourself in the history and modernity
+          of China. Duration: 5 days. Price: $1000.
+          <button
+            class="btn btn-info btn-sm float-right"
+            data-toggle="modal"
+            data-target="#bookingModal"
+          >
+            Book
+          </button>
+        </div>
+        <div class="list-group-item">
+          <strong>Maldives</strong> - Relax in the pristine beaches and
+          luxurious resorts of the Maldives. Duration: 7 days. Price: $1500.
+          <button
+            class="btn btn-info btn-sm float-right"
+            data-toggle="modal"
+            data-target="#bookingModal"
+          >
+            Book
+          </button>
+        </div>
+        <div class="list-group-item">
+          <strong>India</strong> - Experience the vibrant colors and diverse
+          traditions of India. Duration: 5 days. Price: $800.
+          <button
+            class="btn btn-info btn-sm float-right"
+            data-toggle="modal"
+            data-target="#bookingModal"
+          >
+            Book
+          </button>
+        </div>
+        <div class="list-group-item">
+          <strong>Italy</strong> - Indulge in the art, history, and cuisine of
+          Italy. Duration: 7 days. Price: $1200.
+          <button
+            class="btn btn-info btn-sm float-right"
+            data-toggle="modal"
+            data-target="#bookingModal"
+          >
+            Book
+          </button>
+        </div>
+        <div class="list-group-item">
+          <strong>Vietnam</strong> - Discover the rich history and natural
+          beauty of Vietnam. Duration: 5 days. Price: $900.
+          <button
+            class="btn btn-info btn-sm float-right"
+            data-toggle="modal"
+            data-target="#bookingModal"
+          >
+            Book
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="bookingModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="bookingModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookingModalLabel">Book Tour</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Booking Form -->
+            <form id="bookingForm">
+              <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputEmail"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputName">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputName"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputPhone">Phone Number</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="inputPhone"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputPeople">Number of People</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputPeople"
+                  placeholder="Enter number of people"
+                />
+              </div>
+              <div class="form-group">
+                <label for="inputTourDate">Tour Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="inputTourDate"
+                  placeholder="Select tour date"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer mt-auto py-3 bg-dark text-white">
+      <div class="container text-center">
+        <span class="text-muted">Amrenov Almas| SE-2208</span>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tourButtons = document.querySelectorAll(
+          ".list-group-item button"
+        );
+        let selectedTourId = null;
+
+        tourButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remove 'active' class from all buttons
+            tourButtons.forEach((btn) =>
+              btn.parentElement.classList.remove("active")
+            );
+
+            // Add 'active' class to the clicked button's parent element
+            button.parentElement.classList.add("active");
+
+            // Get the tour ID from the data-tour-id attribute
+            selectedTourId = button.parentElement.dataset.tourId; // Use button.parentElement.dataset.tourId
+
+            // Log the tour ID for debugging
+          });
+        });
+        // Function to handle the form submission
+        function submitBooking() {
+          // Get values from the form
+          const email = document.getElementById("inputEmail").value;
+          const name = document.getElementById("inputName").value;
+          const phone = document.getElementById("inputPhone").value;
+          const people = document.getElementById("inputPeople").value;
+          const tourDate = document.getElementById("inputTourDate").value;
+
+          // Log values for debugging
+          console.log("Email:", email);
+          console.log("Name:", name);
+          console.log("Phone:", phone);
+          console.log("People:", people);
+          console.log("Tour Date:", tourDate);
+          console.log("Tour ID:", selectedTourId);
+
+          // Check if a tour is selected
+          if (!selectedTourId) {
+            alert("Please select a tour before submitting the booking.");
+            return;
+          }
+
+          // Prepare data for submission
+          const data = {
+            email,
+            name,
+            phone,
+            people,
+            tourDate,
+            tourId: selectedTourId, // Use the correct variable name here
+          };
+
+          // Make a POST request to the server
+          fetch("/submit-booking", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((response) => response.json())
+            .then((result) => {
+              if (result.success) {
+                alert("Booking submitted successfully!");
+              } else {
+                alert("Failed to submit booking. Please try again.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error submitting booking:", error);
+              alert("An unexpected error occurred. Please try again later.");
+            });
+        }
+
+        // Attach the submitBooking function to the form submission
+        document
+          .getElementById("bookingForm") // Ensure you have a form with the id "bookingForm"
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            submitBooking();
+          });
+      });
+    </script>
+  </body>
+</html>
